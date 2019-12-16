@@ -42,8 +42,11 @@ def go(target_dir: str, pattern: str, footer: str):
                 for sheet_index in range(0, sheets_count):
                     ws = wb.Worksheets(sheet_index + 1)
                     ws.Activate()
-                    if pattern and pattern in ws.Name:
+                    if not pattern:
                         ws.PageSetup.CenterFooter = footer
+                    else:
+                        if pattern in ws.Name:
+                            ws.PageSetup.CenterFooter = footer
                 if sheets_count >= 0:
                     ws = wb.Worksheets(1)
                     ws.Activate()
