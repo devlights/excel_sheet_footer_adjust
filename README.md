@@ -1,0 +1,2 @@
+# excel_sheet_footer_adjust
+Excelを開いて特定の条件にマッチするシートのフッターを調整するスクリプト
